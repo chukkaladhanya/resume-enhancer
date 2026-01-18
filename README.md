@@ -1,174 +1,307 @@
-# 📄 Smart Resume Enhancer
+# Vintervu - AI Career Preparation Platform
 
-An intelligent Streamlit-based web application that enhances, evaluates, and summarizes resumes using **Google Gemini AI**. Get professional resume improvements with AI-powered suggestions, quality metrics, and export options in LaTeX and Markdown formats.
+A comprehensive career preparation platform combining AI-powered interview practice with intelligent resume enhancement.
 
-## ✨ Features
+![Platform](https://img.shields.io/badge/Platform-Full--Stack-blue)
+![Frontend](https://img.shields.io/badge/Frontend-React-61dafb)
+![Backend](https://img.shields.io/badge/Backend-Node.js-339933)
+![Database](https://img.shields.io/badge/Database-MongoDB-47A248)
+![AI](https://img.shields.io/badge/AI-Google%20Gemini-4285F4)
 
-### 🚀 AI-Powered Resume Enhancement
-- **Grammar & Style Improvements**: Fix grammar, spelling, and improve professional tone
-- **Content Optimization**: Enhance clarity, conciseness, and impact
-- **Action Verb Optimization**: Replace weak verbs with strong, impactful alternatives
-- **Structure Refinement**: Improve organization and formatting
-- **Detailed Corrections List**: See exactly what was improved
+---
 
-### 📊 Quality Analysis
-Get comprehensive quality scores across 5 key dimensions:
-- **Grammar & Spelling** - Professional language quality
-- **Clarity & Conciseness** - Clear and concise communication
-- **Structure & Formatting** - Logical organization
-- **Keyword Optimization** - Industry-relevant keywords
-- **Completeness of Sections** - All necessary sections included
+## 🎯 What is Vintervu?
 
-### 📝 AI Summary Generation
-Generate a professional summary highlighting:
-- Key skills and competencies
-- Professional experience highlights
-- Educational background
-- Notable achievements
+**Vintervu** is an all-in-one career preparation platform that helps job seekers excel in their job search journey. It combines:
 
-### 📥 Export Options
-- **LaTeX Format** (.tex) - Professional typesetting for PDF generation
-- **Markdown Format** (.md) - Easy to edit and convert
-- **Text Summary** - Quick professional overview
+- 🎤 **AI Interview Practice** - Practice interviews with AI-generated questions
+- 📋 **Resume Analysis** - Analyze your resume against specific job roles
+- ✨ **Resume Enhancement** - AI-powered resume improvements with corrections
+- 📊 **Quality Scoring** - Get detailed quality metrics across 5 dimensions
+- 📝 **AI Summaries** - Generate professional resume summaries
+- 👤 **User Accounts** - Track your progress and history
+- 💾 **Resume History** - Save and access previous resume versions
 
-## 🖼️ User Interface
+---
 
-The application features a clean, modern interface with three main tabs:
+## 🚀 Key Features
 
-1. **Enhance Resume** - Upload, improve, and download enhanced resume
-2. **Quality Analysis** - Visual quality metrics with progress bars
-3. **Quick Summary** - AI-generated professional summary
+### 1. AI Interview Bot
+- Upload your resume and get AI-generated interview questions
+- Practice answering questions with speech-to-text
+- Receive real-time feedback and scoring
+- Track your interview performance over time
 
-## 🛠️ Technologies Used
+### 2. Resume Analyzer
+- Analyze your resume for specific job roles
+- Get skill match scores
+- Identify missing keywords
+- Receive personalized improvement suggestions
 
-- **[Streamlit](https://streamlit.io/)** - Web application framework
-- **[Google Gemini API](https://ai.google.dev/)** - AI-powered text generation
-- **[PyMuPDF](https://pymupdf.readthedocs.io/)** - PDF text extraction
-- **[python-docx](https://python-docx.readthedocs.io/)** - DOCX text extraction
-- **[python-dotenv](https://pypi.org/project/python-dotenv/)** - Environment variable management
+### 3. Resume Enhancer (NEW!)
+- **AI-Powered Enhancement**: Improve grammar, clarity, and professional tone
+- **Quality Analysis**: 5-metric evaluation system
+  - Grammar & Spelling
+  - Clarity & Conciseness
+  - Structure & Formatting
+  - Keyword Optimization
+  - Completeness of Sections
+- **Professional Summaries**: AI-generated executive summaries
+- **Multiple Export Formats**: LaTeX and Markdown
+- **Corrections Tracking**: See exactly what was improved
+
+---
+
+## �️ Technology Stack
+
+### Frontend
+- **React** - UI framework
+- **Vite** - Build tool
+- **TailwindCSS** - Styling
+- **React Router** - Navigation
+- **Axios** - API calls
+
+### Backend
+- **Node.js** - Runtime
+- **Express.js** - Web framework
+- **MongoDB** - Database
+- **Mongoose** - ODM
+- **Multer** - File uploads
+
+### AI & Processing
+- **Google Gemini AI** - Natural language processing
+- **PDF-Parse** - PDF text extraction
+- **python-docx** - DOCX processing
+
+---
 
 ## 📦 Installation
 
 ### Prerequisites
-- Python 3.10 or higher
-- Google Gemini API key ([Get one here](https://makersuite.google.com/app/apikey))
+- Node.js (v20 or higher)
+- MongoDB (local or Atlas)
+- Google Gemini API key
 
-### Setup Steps
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/hassurashaik/vintervu-mini-.git
+cd vintervu-mini
+```
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/chukkaladhanya/resume-enhancer.git
-   cd resume-enhancer
-   ```
+### Step 2: Backend Setup
+```bash
+cd server
+npm install
+```
 
-2. **Create a virtual environment** (recommended)
-   ```bash
-   # Windows
-   python -m venv venv
-   venv\Scripts\activate
+Create a `.env` file in the `server` directory:
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_email_password
+```
 
-   # macOS/Linux
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
+Start the backend:
+```bash
+npm start
+```
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Step 3: Frontend Setup
+Open a new terminal:
+```bash
+cd client
+npm install
+npm run dev
+```
 
-4. **Configure environment variables**
-   ```bash
-   # Copy the example env file
-   copy .env.example .env   # Windows
-   cp .env.example .env     # macOS/Linux
-   ```
+### Step 4: Access the Application
+Open your browser and navigate to:
+```
+http://localhost:5173
+```
 
-5. **Add your Gemini API key**
-   
-   Edit the `.env` file and replace `your_api_key_here` with your actual API key:
-   ```env
-   GEMINI_API_KEY=your_actual_api_key_here
-   GEMINI_MODEL=gemini-1.5-flash
-   MAX_FILE_SIZE_MB=10
-   ```
+---
 
-6. **Run the application**
-   ```bash
-   streamlit run app.py
-   ```
+## 🎯 Usage Guide
 
-7. **Open in browser**
-   
-   The application will automatically open in your default browser at `http://localhost:8501`
+### Getting Started
+1. **Sign Up** - Create an account to save your progress
+2. **Login** - Access your personalized dashboard
 
-## 🚀 Usage
+### Using Resume Enhancer
+1. Navigate to **Resume Enhancer** from the main menu
+2. **Upload** your resume (PDF or DOCX, max 10MB)
+3. Choose your action:
+   - **Enhance Resume**: Get AI improvements and download LaTeX/Markdown
+   - **Quality Analysis**: View detailed metrics with visual progress bars
+   - **Quick Summary**: Generate a professional summary
 
-1. **Upload Resume**
-   - Click the upload button and select your resume (PDF or DOCX)
-   - Maximum file size: 10MB
+### Using Interview Practice
+1. **Upload Resume** - Start with your resume
+2. **Select Skills** - Choose your skill areas
+3. **Start Interview** - Answer AI-generated questions
+4. **Get Feedback** - Review your performance and scores
 
-2. **Choose an Action**
-   - **Enhance Resume**: Get AI improvements and download enhanced version
-   - **Quality Analysis**: View detailed quality metrics
-   - **Quick Summary**: Generate professional summary
+### Using Resume Analyzer
+1. Select your **target job role**
+2. **Upload** your resume
+3. View **skill match score** and missing keywords
+4. Get **actionable suggestions** for improvement
 
-3. **Download Results**
-   - Download enhanced resume in LaTeX or Markdown format
-   - Compile LaTeX to PDF using [Overleaf](https://www.overleaf.com) or local TeX distribution
+---
+
+## 📊 Features Overview
+
+| Feature | Description | Authentication Required |
+|---------|-------------|------------------------|
+| **Home** | Landing page and overview | No |
+| **Interview Practice** | AI-powered mock interviews | Yes |
+| **Resume Analyzer** | Job-specific resume analysis | Yes |
+| **Resume Enhancer** | AI resume improvements | Yes |
+| **Quality Scoring** | 5-metric evaluation | Yes |
+| **AI Summaries** | Professional summary generation | Yes |
+| **Dashboard** | User progress tracking | Yes |
+
+---
+
+## 🔑 Environment Variables
+
+### Backend (`server/.env`)
+```env
+# Required
+GEMINI_API_KEY=your_gemini_api_key
+MONGO_URI=mongodb://localhost:27017/vintervu  # or Atlas connection string
+
+# Optional
+PORT=5000
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
+```
+
+### Getting a Gemini API Key
+1. Visit: https://makersuite.google.com/app/apikey
+2. Sign in with your Google account
+3. Create a new API key
+4. Copy and paste into your `.env` file
+
+---
 
 ## 📁 Project Structure
 
 ```
-resume-enhancer/
-├── app.py                  # Main Streamlit application
-├── config.py              # Configuration management
-├── resume_utils.py        # Text extraction utilities
-├── requirements.txt       # Python dependencies
-├── .env.example          # Environment variable template
-├── .env                  # Your API key (git-ignored)
-├── .gitignore           # Git ignore rules
-└── README.md            # This file
+vintervu-mini/
+├── server/                      # Backend
+│   ├── models/                  # MongoDB models
+│   │   ├── User.js
+│   │   ├── Feedback.js
+│   │   └── EnhancedResume.js
+│   ├── routes/                  # API routes
+│   │   ├── interview.js
+│   │   └── resume.js
+│   ├── services/                # Business logic
+│   │   ├── resumeProcessor.js
+│   │   ├── resumeEnhancer.js
+│   │   ├── interviewService.js
+│   │   └── questionGenerator.js
+│   └── index.js                 # Entry point
+│
+└── client/                      # Frontend
+    ├── src/
+    │   ├── components/
+    │   │   ├── Home.jsx
+    │   │   ├── Interview.jsx
+    │   │   ├── ResumeAnalyzer.jsx
+    │   │   ├── Dashboard.jsx
+    │   │   └── ResumeEnhancer/  # Resume enhancement feature
+    │   │       ├── ResumeEnhancerPage.jsx
+    │   │       ├── UploadSection.jsx
+    │   │       ├── EnhanceTab.jsx
+    │   │       ├── QualityTab.jsx
+    │   │       └── SummaryTab.jsx
+    │   ├── App.jsx
+    │   └── main.jsx
+    └── package.json
 ```
 
-## 🔒 Security Notes
+---
 
-- **Never commit your `.env` file** - It contains your API key
-- The `.env` file is automatically git-ignored
-- If you accidentally commit your API key, regenerate it immediately at [Google AI Studio](https://makersuite.google.com/app/apikey)
+## � API Endpoints
 
-## ⚡ Performance Features
+### Resume Enhancement
+- `POST /api/resume/enhance` - Enhance resume with AI
+- `POST /api/resume/quality` - Get quality scores
+- `POST /api/resume/summarize` - Generate summary
+- `GET /api/resume/download/:type/:id` - Download LaTeX/Markdown
+- `GET /api/resume/history/:userId` - Get resume history
+- `GET /api/resume/:id` - Get specific resume
 
-- **Smart Caching**: Results are cached to avoid redundant API calls
-- **Efficient Processing**: Optimized text extraction and processing
-- **Session State**: Maintains state across interactions
+### Interview
+- `POST /api/interview/upload-resume` - Upload resume for interview
+- `POST /api/interview/start` - Start interview session
+- `GET /api/interview/next-question` - Get next question
+- `POST /api/interview/record-response` - Submit answer
+- `POST /api/interview/end-interview` - End and get results
 
-## 🐛 Troubleshooting
+### Authentication
+- `POST /api/login` - User login
+- `POST /api/signup` - User registration
+- `GET /api/feedback/:email` - Get user feedback history
 
-### "GEMINI_API_KEY not found" Error
-- Ensure you created a `.env` file (copy from `.env.example`)
-- Add your actual API key to the `.env` file
-- Restart the application
+---
 
-### PDF/DOCX Extraction Issues
-- Ensure your file is not corrupted
-- Check if the file contains extractable text (not just images)
-- Try converting scanned PDFs to text-based PDFs
+## 🚀 Deployment
 
-### File Size Error
-- Default limit is 10MB
-- You can increase this in `.env` by changing `MAX_FILE_SIZE_MB`
+### Backend Deployment
+1. Deploy to services like Heroku, Railway, or Render
+2. Set environment variables
+3. Connect to MongoDB Atlas for production
+
+### Frontend Deployment
+1. Build the production bundle:
+   ```bash
+   cd client
+   npm run build
+   ```
+2. Deploy to Vercel, Netlify, or similar
+3. Update API base URL to production backend
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! To contribute:
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create a feature branch: `git checkout -b feature/YourFeature`
+3. Commit changes: `git commit -m 'Add YourFeature'`
+4. Push to branch: `git push origin feature/YourFeature`
+5. Submit a Pull Request
 
+---
 
+## � License
 
+This project is licensed under the MIT License.
 
+---
+
+## 🙏 Acknowledgments
+
+- **Google Gemini AI** - For powerful language model capabilities
+- **Streamlit** - Inspiration for UI patterns
+- **Open Source Community** - For excellent libraries and tools
+
+---
+
+## 📞 Support
+
+For issues, questions, or feature requests:
+- Open an issue on GitHub
+- Check existing documentation
+- Review the troubleshooting guide
+
+---
+
+**Built with ❤️ for helping people succeed in their careers**
